@@ -1,0 +1,22 @@
+The Sliding Window technique is a powerful approach used in solving problems that involve arrays or lists. It’s especially useful when dealing with contiguous subarrays
+or substrings, and it helps optimize solutions from O(n²) to O(n).
+
+Q.) What is the Sliding Window technique?
+- Instead of checking all possible subarrays, you "slide" a window (a range of elements) over the data structure and keep track of a subset of data to compute the 
+result efficiently
+
+Q.) When to use it?
+Use Sliding Window when :
+- You are dealing with contiguous elements (subarrays or substrings).
+- You need to optimize time complexity.
+- The problem asks for maximum/minimum sum, length, or number of elements under certain conditions.
+
+Types of Sliding Window :
+Fixed Size Window – When the window size is known beforehand.
+Variable Size Window – When the window size changes based on a condition.
+
+Common Questions Using Sliding Window : Maximum sum subarray of size k
+                                        Longest substring with k distinct characters
+                                        Longest substring without repeating characters
+                                        Minimum window substring (hard)
+                                        Permutation in string
