@@ -1,0 +1,119 @@
+A stack is a linear data structure that follows the LIFO principle. The last element added to the stack is the first one to be removed.
+Real-Life examples :- 1. A stack of the plate 2. Browser History(Backtracking Pages) 3. Undo functionality in text editors
+Basic Operations :- 1.Push 2.Pop 3.Peek,Top 4.isEmpty 5.size
+
+Making class with a Dynamic array by our own in Java language :-
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+import java.util.ArrayList;
+import java.util.List;
+
+class MyStack {
+    private final List<Integer> list;
+
+    public MyStack() {
+        list = new ArrayList<>();
+    }
+
+    public int top() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return list.get(list.size() - 1);
+    }
+
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+    public void push(int x) {
+        list.add(x);
+    }
+
+    public boolean pop() {
+        if (isEmpty()) {
+            return false;
+        }
+        list.remove(list.size() - 1);
+        return true;
+    }
+
+    public int size() {
+        return list.size();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyStack stack = new MyStack();
+
+        stack.push(100);
+        stack.push(200);
+        stack.push(300);
+
+        System.out.println("Initially at the top : " + stack.top());     // 300
+        System.out.println("Now pop is : " + stack.pop());              // true
+        System.out.println("Now the latest number at the top : " + stack.top()); // 200
+        System.out.println("Final size of the stack : " + stack.size());         // 2
+        System.out.println("Is the stack empty? : " + stack.isEmpty());           // false
+    }
+}
+
+By using Java inbuilt Stack Library directly by calling the function Stack to it :-
+import java.util.ArrayList;
+import java.util.List;
+
+class MyStack {
+    private final List<Integer> list;
+
+    public MyStack() {
+        list = new ArrayList<>();
+    }
+
+    public int top() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return list.get(list.size() - 1);
+    }
+
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+    public void push(int x) {
+        list.add(x);
+    }
+
+    public boolean pop() {
+        if (isEmpty()) {
+            return false;
+        }
+        list.remove(list.size() - 1);
+        return true;
+    }
+
+    public int size() {
+        return list.size();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+
+        // Push three elements
+        stack.push(100);
+        stack.push(200);
+        stack.push(300);
+
+        // Required prints
+        System.out.println("Peek: " + stack.peek());          // 300
+        System.out.println("Is empty? : " + stack.isEmpty());   // false
+        System.out.println("Size: " + stack.size());          // 3
+        System.out.println("Pop: " + stack.pop());            // 300
+        System.out.println("Peek after pop: " + stack.peek()); // 200
+        System.out.println("Is empty now? " + stack.isEmpty());// false
+    }
+}
